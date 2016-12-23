@@ -1,1 +1,40 @@
-<h1>edit post</h1>
+<h3>Edit post:</h3>
+<form id="edit-form" method="PUT" action="/post/<%- product.id %>">
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" class="form-control" value="<%- String(product.title) %>" required/>
+  </div>
+  <div class="form-group">
+    <label for="price">Price:</label>
+    <input type="number" name="price" id="price" class="form-control" value="<%- String(product.price) %>" required/>
+  </div>
+  <div class="form-group">
+    <label for="details">Details:</label>
+    <input type="text" name="details" id="details" class="form-control" value="<%- String(product.details) %>" required/>
+  </div>
+  <div class="form-group">
+    <label for="location">Location:</label>
+    <input type="text" name="location" id="location" class="form-control" value="<%- String(product.location) %>" required/>
+  </div>
+  <div class="form-group">
+    <label for="condition">Condition:</label>
+    <input type="text" name="condition" id="condition" class="form-control" value="<%- String(product.condition) %>"/>
+  </div>
+  <div class="form-group">
+    <label for="make">Make:</label>
+    <input type="text" name="make" id="make" class="form-control" value="<%- String(product.make) %>"/>
+  </div>
+  <div class="form-group">
+    <label for="model">Model:</label>
+    <input type="text" name="model" id="model" class="form-control" value="<%- String(product.model) %>"/>
+  </div>
+  <div class="form-group">
+    <label for="image">Image URL:</label>
+    <input type="text" name="image" id="image" class="form-control" value="<%- String(product.image) %>"/>
+  </div>
+  <div class="form-group">
+    <label for="ownerID">Owner ID:</label>
+    <input type="number" name="ownerID" id="ownerID" class="form-control" value="<%- String(product.ownerID) %>"/>
+  </div>
+  <input type="submit" class="btn btn-success" value="Update"/>
+</form>

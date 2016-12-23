@@ -1,9 +1,41 @@
-<%- product.title %>
-<%- product.price %>
-<%- product.details %>
-<%- product.location %>
-<%- product.condition %>
-<%- product.make %>
-<%- product.model %>
-<%- product.image %>
-<%- product.ownerID %>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="product-title">
+      <%- product.title %><span style="float:right;">$<%- product.price %></span>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div>
+      <strong>Location: </strong><%- product.location %>
+    </div>
+    <div>
+      <strong>Details: </strong><%- product.details %>
+    </div>
+    <div>
+      <strong>Condition: </strong><%- product.condition %>
+    </div>
+    <div>
+      <strong>Make: </strong><%- product.make %>
+    </div>
+    <div>
+      <strong>Model: </strong><%- product.model %>
+    </div>
+    <div>
+      <strong>Image URL: </strong><%- product.image %>
+    </div>
+    <div>
+      <strong>Owner ID: </strong><%- product.ownerID %>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div>
+      <a href="/post/<%- product.id %>/edit" class='btn btn-xs btn-warning edit'>Edit</a>
+      <a href="/post/<%- product.id %>" class='btn btn-xs btn-danger delete'>Delete</a>
+      <div class='btn btn-xs btn-danger back-button'>Back</div>
+    </div>
+  </div>
+</div>

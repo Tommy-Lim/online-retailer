@@ -1,3 +1,13 @@
+body{
+  min-width: 320px;
+  /*background: linear-gradient(0deg,rgb(180, 210, 255),rgb(190, 226, 255));
+  background-repeat: no-repeat;*/
+}
+
+a:focus, a:hover{
+  text-decoration: none;
+}
+
 .row{
   margin-top: 8px;
 }
@@ -10,6 +20,7 @@
 
 .right{
   justify-content: flex-end;
+  align-items: center;
 }
 
 .right a{
@@ -17,8 +28,26 @@
 }
 
 .logo{
-  font-size: 50px;
+  font-size: 42px;
   line-height: 50px;
   font-weight: bolder;
-  color: gold;
+}
+
+.product-title{
+  color: #337ab7;
+  font-size: 24px;
+  text-decoration: none;
+}
+.product-line{
+  padding: 0 4px;
+  border-radius: 4px;
+  color: black;
+}
+
+.product-line:hover{
+  background-color: rgb(245, 245, 245);
+}
+
+.layoutTop{
+  position: fixed;
 }

@@ -41,14 +41,14 @@ app.get('/contact', function(req,res){
   res.render('site/contact');
 });
 
+app.get('/search', function(req,res){
+  res.render('post/search-results');
+});
+
 app.get('/post/all', function(req,res){
   db.product.findAll().then(function(products){
     res.render('post/index',{products:products});
   });
-});
-
-app.get('/search', function(req,res){
-  res.render('post/search-results');
 });
 
 app.get('/post/new', function(req,res){
@@ -59,7 +59,6 @@ app.post('/post/new', function(req,res){
   db.product.create(req.body).then(function(){
     res.redirect('/post/all');
   });
-
 });
 
 app.get('/post/:id', function(req,res){
@@ -69,8 +68,27 @@ app.get('/post/:id', function(req,res){
   });
 });
 
+app.delete('/post/:id', function(req,res){
+  var id = req.params.id;
+  db.product.findById(id).then(function(product){
+    product.destroy();
+    res.send('delete success');
+  });
+});
+
+app.put('/post/:id', function(req,res){
+  var id = req.params.id;
+  db.product.findById(id).then(function(product){
+    product.update(req.body);
+    res.send('put success');
+  });
+});
+
 app.get('/post/:id/edit', function(req,res){
-  res.render('post/edit',{});
+  var id = req.params.id;
+  db.product.findById(id).then(function(product){
+    res.render('post/edit',{product:product});
+  });
 });
 
 // ERROR HANDLING
