@@ -41,6 +41,56 @@
             <div class="form-group">
               <input type="text" name="search" id="search" class="form-control" placeholder="Search"/>
               <input type="submit" value="submit" style="display: none;"/>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <% if (query.title === 'true') { %>
+                    <input name="title" class="form-check-input" type="checkbox" value="true" checked>
+                  <% } else { %>
+                    <input name="title" class="form-check-input" type="checkbox" value="true">
+                  <% } %>
+                  Title
+                </label>
+                <label class="form-check-label">
+                  <% if (query.details === 'true') { %>
+                    <input name="details" class="form-check-input" type="checkbox" value="true" checked>
+                  <% } else { %>
+                    <input name="details" class="form-check-input" type="checkbox" value="true">
+                  <% } %>
+                  Details
+                </label>
+                <label class="form-check-label">
+                  <% if (query.location === 'true') { %>
+                    <input name="location" class="form-check-input" type="checkbox" value="true" checked>
+                  <% } else { %>
+                    <input name="location" class="form-check-input" type="checkbox" value="true">
+                  <% } %>
+                  Location
+                </label>
+                <label class="form-check-label">
+                  <% if (query.make === 'true') { %>
+                    <input name="make" class="form-check-input" type="checkbox" value="true" checked>
+                  <% } else { %>
+                    <input name="make" class="form-check-input" type="checkbox" value="true">
+                  <% } %>
+                  Make
+                </label>
+                <label class="form-check-label">
+                  <% if (query.model === 'true') { %>
+                    <input name="model" class="form-check-input" type="checkbox" value="true" checked>
+                  <% } else { %>
+                    <input name="model" class="form-check-input" type="checkbox" value="true">
+                  <% } %>
+                  Model
+                </label>
+                <label class="form-check-label">
+                  <% if (query.ownerID === 'true') { %>
+                    <input name="ownerID" class="form-check-input" type="checkbox" value="true" checked>
+                  <% } else { %>
+                    <input name="ownerID" class="form-check-input" type="checkbox" value="true">
+                  <% } %>
+                  Owner ID
+                </label>
+              </div>
             </div>
           </form>
         </div>

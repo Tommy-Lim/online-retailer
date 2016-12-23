@@ -42,7 +42,10 @@ app.get('/contact', function(req,res){
 });
 
 app.get('/search', function(req,res){
-  q = req.query.search;
+  console.log(req.query);
+  console.log(req.query.title);
+  query = req.query;
+  q = query.search;
   db.product.findAll().then(function(products){
     var results = [];
     products.forEach(function(product){
@@ -51,16 +54,15 @@ app.get('/search', function(req,res){
       details = product.details.toLowerCase();
       location = product.location.toLowerCase();
       make = product.make.toLowerCase();
-      model = product.ownerID.toLowerCase();
+      model = product.model.toLowerCase();
+      ownerID = product.ownerID.toLowerCase();
 
-      console.log(title,details,location,make,model);
-
-      if(title.indexOf(q)>=0||details.indexOf(q)>=0||location.indexOf(q)>=0||make.indexOf(q)>=0||model.indexOf(q)>=0){
+      if(title.indexOf(q)>=0||details.indexOf(q)>=0||location.indexOf(q)>=0||make.indexOf(q)>=0||model.indexOf(q)>=0||ownerID.indexOf(q)>=0){
         results.push(product);
       }
 
     });
-    res.render('post/search-results',{products:results});
+    res.render('post/search-results',{products:results, query: query});
   });
 });
 
