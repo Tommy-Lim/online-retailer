@@ -1,9 +1,46 @@
-<h1>search results</h1>
 <div class="row">
-  <div class="col-sm-3">
-    aside
+  <div class="col-sm-12">
+    <a href="#" class="btn btn-default btn-sm">
+      Title <i class="fa fa-sort" aria-hidden="true"></i>
+    </a>
+    <a href="#" class="btn btn-default btn-sm">
+      Price <i class="fa fa-sort" aria-hidden="true"></i>
+    </a>
+    <a href="#" class="btn btn-default btn-sm">
+      Location <i class="fa fa-sort" aria-hidden="true"></i>
+    </a>
+    <a href="#" class="btn btn-default btn-sm">
+      Date created <i class="fa fa-sort" aria-hidden="true"></i>
+    </a>
+    <a href="#" class="btn btn-default btn-sm">
+      Date updated <i class="fa fa-sort" aria-hidden="true"></i>
+    </a>
   </div>
-  <div class="col-sm-9">
-    posts
+</div>
+
+<h1 class="list-header">(<%-products.length %>) search results:</h1>
+
+<div class="row">
+  <div class="col-sm-12">
+    <% products.forEach(function(product){ %>
+      <a href="/post/<%- product.id %>">
+        <div class="product-line">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="product-title"><%- product.title %><span style="float:right;">$ <%- product.price %></span></div class="product-title">
+              <div>
+                <strong>Location: </strong><%- product.location %>
+              </div>
+              <div>
+                <strong>Details: </strong><%- product.details %>
+              </div>
+              <div>
+                <strong>Created: </strong><%- product.createdAt %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    <% }); %>
   </div>
 </div>

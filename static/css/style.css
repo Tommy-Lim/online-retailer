@@ -31,6 +31,7 @@ a:focus, a:hover{
   font-size: 42px;
   line-height: 50px;
   font-weight: bolder;
+  font-style: italic;
 }
 
 .product-title{
@@ -50,4 +51,12 @@ a:focus, a:hover{
 
 .layoutTop{
   position: fixed;
+}
+
+.bottom-layout{
+  margin-bottom: 30px;
+}
+
+.list-header{
+  color: grey;
 }

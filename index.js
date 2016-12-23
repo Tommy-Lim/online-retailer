@@ -42,7 +42,26 @@ app.get('/contact', function(req,res){
 });
 
 app.get('/search', function(req,res){
-  res.render('post/search-results');
+  q = req.query.search;
+  db.product.findAll().then(function(products){
+    var results = [];
+    products.forEach(function(product){
+
+      title = product.title.toLowerCase();
+      details = product.details.toLowerCase();
+      location = product.location.toLowerCase();
+      make = product.make.toLowerCase();
+      model = product.ownerID.toLowerCase();
+
+      console.log(title,details,location,make,model);
+
+      if(title.indexOf(q)>=0||details.indexOf(q)>=0||location.indexOf(q)>=0||make.indexOf(q)>=0||model.indexOf(q)>=0){
+        results.push(product);
+      }
+
+    });
+    res.render('post/search-results',{products:results});
+  });
 });
 
 app.get('/post/all', function(req,res){
