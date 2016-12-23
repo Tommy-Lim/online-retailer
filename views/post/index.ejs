@@ -1,24 +1,10 @@
-<div class="row">
-  <div class="col-sm-12">
-    <a href="#" class="btn btn-default btn-sm toggle-title">
-      Title <i class="fa fa-sort" aria-hidden="true"></i>
-    </a>
-    <a href="#" class="btn btn-default btn-sm toggle-price">
-      Price <i class="fa fa-sort" aria-hidden="true"></i>
-    </a>
-    <a href="#" class="btn btn-default btn-sm toggle-location">
-      Location <i class="fa fa-sort" aria-hidden="true"></i>
-    </a>
-    <a href="#" class="btn btn-default btn-sm toggle-createdAt">
-      Date created <i class="fa fa-sort" aria-hidden="true"></i>
-    </a>
-    <a href="#" class="btn btn-default btn-sm toggle-updatedAt">
-      Date updated <i class="fa fa-sort" aria-hidden="true"></i>
-    </a>
-  </div>
-</div>
-
-<h1 class="list-header">all products:</h1>
+<% if(page=='all'){ %>
+  <h1 class="list-header">all products:</h1>
+<% }else if(page=='search'&&products.length==1){ %>
+  <h1 class="list-header">(<%- products.length %>) product found:</h1>
+<% } else if(page=='search'){ %>%>
+  <h1 class="list-header">(<%- products.length %>) products found:</h1>
+<% } %>
 
 <div class="row">
   <div class="col-sm-12">

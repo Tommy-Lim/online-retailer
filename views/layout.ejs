@@ -20,99 +20,129 @@
   </head>
   <body>
     <div class="container">
+      <div class="container fixed-piece">
 
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="header left">
-            <a href="/" class="logo">sea.buy()</a>
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="header right">
-            <a href="/account" class="btn btn-sm btn-primary"><i class="fa fa-user" aria-hidden="true"></i></a>
-            <a href="/cart" class="btn btn-sm btn-primary"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-12">
-          <form method="GET" action="/search">
-            <div class="form-group">
-              <input type="text" name="search" id="search" class="form-control" placeholder="Search"/>
-              <input type="submit" value="submit" style="display: none;"/>
-              <div class="form-check">
-                <label class="form-check-label">
-                  <% if (query.title === 'true') { %>
-                    <input name="title" class="form-check-input" type="checkbox" value="true" checked>
-                  <% } else { %>
-                    <input name="title" class="form-check-input" type="checkbox" value="true">
-                  <% } %>
-                  Title
-                </label>
-                <label class="form-check-label">
-                  <% if (query.details === 'true') { %>
-                    <input name="details" class="form-check-input" type="checkbox" value="true" checked>
-                  <% } else { %>
-                    <input name="details" class="form-check-input" type="checkbox" value="true">
-                  <% } %>
-                  Details
-                </label>
-                <label class="form-check-label">
-                  <% if (query.location === 'true') { %>
-                    <input name="location" class="form-check-input" type="checkbox" value="true" checked>
-                  <% } else { %>
-                    <input name="location" class="form-check-input" type="checkbox" value="true">
-                  <% } %>
-                  Location
-                </label>
-                <label class="form-check-label">
-                  <% if (query.make === 'true') { %>
-                    <input name="make" class="form-check-input" type="checkbox" value="true" checked>
-                  <% } else { %>
-                    <input name="make" class="form-check-input" type="checkbox" value="true">
-                  <% } %>
-                  Make
-                </label>
-                <label class="form-check-label">
-                  <% if (query.model === 'true') { %>
-                    <input name="model" class="form-check-input" type="checkbox" value="true" checked>
-                  <% } else { %>
-                    <input name="model" class="form-check-input" type="checkbox" value="true">
-                  <% } %>
-                  Model
-                </label>
-                <label class="form-check-label">
-                  <% if (query.ownerID === 'true') { %>
-                    <input name="ownerID" class="form-check-input" type="checkbox" value="true" checked>
-                  <% } else { %>
-                    <input name="ownerID" class="form-check-input" type="checkbox" value="true">
-                  <% } %>
-                  Owner ID
-                </label>
-              </div>
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="header left">
+              <a href="/" class="logo">sea.buy()</a>
             </div>
-          </form>
+          </div>
+          <div class="col-xs-6">
+            <div class="header right">
+              <a href="/account" class="btn btn-sm btn-primary"><i class="fa fa-user" aria-hidden="true"></i></a>
+              <a href="/cart" class="btn btn-sm btn-primary"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+            </div>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <form method="GET" action="/search">
+              <div class="form-group" style="margin-bottom:0;">
+                <input type="text" name="search" id="search" class="form-control" placeholder="Search"/>
+                <input type="submit" value="submit" style="display: none;"/>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <% if (query.title === 'true') { %>
+                      <input name="title" class="form-check-input" type="checkbox" value="true" checked>
+                    <% } else { %>
+                      <input name="title" class="form-check-input" type="checkbox" value="true">
+                    <% } %>
+                    Title
+                  </label>
+                  <label class="form-check-label">
+                    <% if (query.details === 'true') { %>
+                      <input name="details" class="form-check-input" type="checkbox" value="true" checked>
+                    <% } else { %>
+                      <input name="details" class="form-check-input" type="checkbox" value="true">
+                    <% } %>
+                    Details
+                  </label>
+                  <label class="form-check-label">
+                    <% if (query.location === 'true') { %>
+                      <input name="location" class="form-check-input" type="checkbox" value="true" checked>
+                    <% } else { %>
+                      <input name="location" class="form-check-input" type="checkbox" value="true">
+                    <% } %>
+                    Location
+                  </label>
+                  <label class="form-check-label">
+                    <% if (query.make === 'true') { %>
+                      <input name="make" class="form-check-input" type="checkbox" value="true" checked>
+                    <% } else { %>
+                      <input name="make" class="form-check-input" type="checkbox" value="true">
+                    <% } %>
+                    Make
+                  </label>
+                  <label class="form-check-label">
+                    <% if (query.model === 'true') { %>
+                      <input name="model" class="form-check-input" type="checkbox" value="true" checked>
+                    <% } else { %>
+                      <input name="model" class="form-check-input" type="checkbox" value="true">
+                    <% } %>
+                    Model
+                  </label>
+                  <label class="form-check-label">
+                    <% if (query.ownerID === 'true') { %>
+                      <input name="ownerID" class="form-check-input" type="checkbox" value="true" checked>
+                    <% } else { %>
+                      <input name="ownerID" class="form-check-input" type="checkbox" value="true">
+                    <% } %>
+                    Owner ID
+                  </label>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <a href="/post/all" class="btn btn-success"><i class="fa fa-list" aria-hidden="true"></i> Browse</a>
+            <a href="/post/new" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> New</a>
+          </div>
+        </div>
+
+        <hr />
+
+        <% var showOptions; %>
+        <% if (showOptions === true) { %>
+          <div class="row">
+            <div class="col-sm-12">
+              <a href="#" class="btn btn-default btn-sm toggle-title">
+                Title <i class="fa fa-sort" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="btn btn-default btn-sm toggle-price">
+                Price <i class="fa fa-sort" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="btn btn-default btn-sm toggle-location">
+                Location <i class="fa fa-sort" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="btn btn-default btn-sm toggle-createdAt">
+                Date created <i class="fa fa-sort" aria-hidden="true"></i>
+              </a>
+              <a href="#" class="btn btn-default btn-sm toggle-updatedAt">
+                Date updated <i class="fa fa-sort" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <hr />
+        <% } %>
+        
       </div>
 
-      <div class="row">
-        <div class="col-xs-12">
-          <a href="/post/all" class="btn btn-success"><i class="fa fa-list" aria-hidden="true"></i> Browse</a>
-          <a href="/post/new" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> New</a>
-        </div>
-      </div>
+      <div class="bottom-layout">
 
-      <hr />
+        <%- body %>
 
-      <%- body %>
+        <hr />
 
-      <hr />
-
-      <div class="row bottom-layout">
-        <div class="col-sm-12">
-          <a href="/about" class="btn btn-sm btn-link"><i class="fa fa-info" aria-hidden="true"></i> About</a>
-          <a href="/contact" class="btn btn-sm btn-link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
+        <div class="row">
+          <div class="col-sm-12">
+            <a href="/about" class="btn btn-sm btn-link"><i class="fa fa-info" aria-hidden="true"></i> About</a>
+            <a href="/contact" class="btn btn-sm btn-link"><i class="fa fa-phone" aria-hidden="true"></i> Contact</a>
+          </div>
         </div>
       </div>
 

@@ -8,10 +8,6 @@ a:focus, a:hover{
   text-decoration: none;
 }
 
-.row{
-  margin-top: 8px;
-}
-
 .header{
   height: 50px;
   display: flex;
@@ -43,6 +39,7 @@ a:focus, a:hover{
   padding: 0 4px;
   border-radius: 4px;
   color: black;
+  margin-bottom: 8px;
 }
 
 .product-line:hover{
@@ -55,8 +52,27 @@ a:focus, a:hover{
 
 .bottom-layout{
   margin-bottom: 30px;
+  margin-top: 255px;
 }
 
 .list-header{
   color: grey;
+}
+
+.fixed-piece{
+  position: fixed;
+  background-color: white;
+  z-index: 1;
+  margin-left: -15px;
+}
+
+hr{
+  margin-top: 10px
+  margin-bottom: 10px;
+}
+
+@media (max-width: 445px) {
+  .bottom-layout{
+    margin-top: 310px;
+  }
 }
