@@ -1,0 +1,24 @@
+.row{
+  margin-top: 8px;
+}
+
+.header{
+  height: 50px;
+  display: flex;
+  align-items: flex-end;;
+}
+
+.right{
+  justify-content: flex-end;
+}
+
+.right a{
+  margin-left: 4px;
+}
+
+.logo{
+  font-size: 50px;
+  line-height: 50px;
+  font-weight: bolder;
+  color: gold;
+}
