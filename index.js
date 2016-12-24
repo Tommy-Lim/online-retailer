@@ -23,27 +23,27 @@ app.use(express.static(path.join(__dirname, 'static'))); //boilerplate
 
 // home page
 app.get('/', function(req,res){
-  res.render('site/home');
+  res.render('site/home',{showOptions:false});
 });
 
 //about page
 app.get('/about', function(req,res){
-  res.render('site/about');
+  res.render('site/about',{showOptions:false});
 });
 
 // account page
 app.get('/account', function(req,res){
-  res.render('site/account');
+  res.render('site/account',{showOptions:false});
 });
 
 // cart page
 app.get('/cart', function(req,res){
-  res.render('site/cart');
+  res.render('site/cart',{showOptions:false});
 });
 
 // contact page
 app.get('/contact', function(req,res){
-  res.render('site/contact');
+  res.render('site/contact',{showOptions:false});
 });
 
 // search function with checkboxes
@@ -53,10 +53,16 @@ app.get('/search', function(req,res){
   query = req.query;
   q = query.search;
 
+  console.log(query);
+  console.log(query.title);
+  console.log(query.details);
+
   // check if the box is equal to true and if so, does the value include the query
   function isMatch(checkValue, value, query){
     value = value.toLowerCase();
     query = query.toLowerCase();
+    // console.log(value);
+    // console.log(checkValue);
     return checkValue === 'true' && value.includes(query);
   }
 
@@ -102,7 +108,7 @@ app.get('/post/all', function(req,res){
 });
 
 app.get('/post/new', function(req,res){
-  res.render('post/new');
+  res.render('post/new',{showOptions:false});
 });
 
 app.post('/post/new', function(req,res){
@@ -114,7 +120,7 @@ app.post('/post/new', function(req,res){
 app.get('/post/:id', function(req,res){
   var id = req.params.id;
   db.product.findById(id).then(function(product){
-    res.render('post/show',{product:product});
+    res.render('post/show',{product:product,showOptions:false});
   });
 });
 
@@ -137,13 +143,13 @@ app.put('/post/:id', function(req,res){
 app.get('/post/:id/edit', function(req,res){
   var id = req.params.id;
   db.product.findById(id).then(function(product){
-    res.render('post/edit',{product:product});
+    res.render('post/edit',{product:product,showOptions:false});
   });
 });
 
 // ERROR HANDLING
 app.get('*********', function(req,res){
-  res.render('site/error');
+  res.render('site/error',{showOptions:false});
 });
 
 // LISTEN

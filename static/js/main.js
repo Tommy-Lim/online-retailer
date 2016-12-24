@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', function() {
+  console.log(TOP_MARGIN);
+  $('.bottom-layout').css('margin-top',TOP_MARGIN);
+});
+
 $(".delete").on('click',function(e){
   e.preventDefault();
   var element = $(this);
@@ -27,7 +32,6 @@ $("#edit-form").on('submit',function(e){
   }).done(function(){
     console.log("got here");
     console.log(url);
-    // debugger
     window.location = url;
   });
 });

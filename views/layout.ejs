@@ -40,57 +40,97 @@
           <div class="col-sm-12">
             <form method="GET" action="/search">
               <div class="form-group" style="margin-bottom:0;">
-                <input type="text" name="search" id="search" class="form-control" placeholder="Search"/>
-                <input type="submit" value="submit" style="display: none;"/>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <% if (query.title === 'true') { %>
-                      <input name="title" class="form-check-input" type="checkbox" value="true" checked>
-                    <% } else { %>
-                      <input name="title" class="form-check-input" type="checkbox" value="true">
-                    <% } %>
-                    Title
-                  </label>
-                  <label class="form-check-label">
-                    <% if (query.details === 'true') { %>
-                      <input name="details" class="form-check-input" type="checkbox" value="true" checked>
-                    <% } else { %>
-                      <input name="details" class="form-check-input" type="checkbox" value="true">
-                    <% } %>
-                    Details
-                  </label>
-                  <label class="form-check-label">
-                    <% if (query.location === 'true') { %>
-                      <input name="location" class="form-check-input" type="checkbox" value="true" checked>
-                    <% } else { %>
-                      <input name="location" class="form-check-input" type="checkbox" value="true">
-                    <% } %>
-                    Location
-                  </label>
-                  <label class="form-check-label">
-                    <% if (query.make === 'true') { %>
-                      <input name="make" class="form-check-input" type="checkbox" value="true" checked>
-                    <% } else { %>
-                      <input name="make" class="form-check-input" type="checkbox" value="true">
-                    <% } %>
-                    Make
-                  </label>
-                  <label class="form-check-label">
-                    <% if (query.model === 'true') { %>
-                      <input name="model" class="form-check-input" type="checkbox" value="true" checked>
-                    <% } else { %>
-                      <input name="model" class="form-check-input" type="checkbox" value="true">
-                    <% } %>
-                    Model
-                  </label>
-                  <label class="form-check-label">
-                    <% if (query.ownerID === 'true') { %>
-                      <input name="ownerID" class="form-check-input" type="checkbox" value="true" checked>
-                    <% } else { %>
-                      <input name="ownerID" class="form-check-input" type="checkbox" value="true">
-                    <% } %>
-                    Owner ID
-                  </label>
+
+                <% var query; %>
+                <% if(query===undefined){ %>
+
+                  <input type="text" name="search" id="search" class="form-control" placeholder="Search"/>
+                  <input type="submit" value="submit" style="display: none;"/>
+
+                  <div class="form-check">
+                    <label class="form-check-label">
+                        <input name="title" class="form-check-input" type="checkbox" value="true" checked>
+                      Title
+                    </label>
+                    <label class="form-check-label">
+                        <input name="details" class="form-check-input" type="checkbox" value="true" checked>
+                      Details
+                    </label>
+                    <label class="form-check-label">
+                        <input name="location" class="form-check-input" type="checkbox" value="true" checked>
+                      Location
+                    </label>
+                    <label class="form-check-label">
+                        <input name="make" class="form-check-input" type="checkbox" value="true" checked>
+                      Make
+                    </label>
+                    <label class="form-check-label">
+                        <input name="model" class="form-check-input" type="checkbox" value="true" checked>
+                      Model
+                    </label>
+                    <label class="form-check-label">
+                        <input name="ownerID" class="form-check-input" type="checkbox" value="true" checked>
+                      Owner ID
+                    </label>
+
+                <% } else{ %>
+
+                  <input type="text" name="search" id="search" class="form-control" value="<%- query.search %>"/>
+                  <input type="submit" value="submit" style="display: none;"/>
+
+                  <div class="form-check">
+
+                    <label class="form-check-label">
+                      <% if (query.title === 'true') { %>
+                        <input name="title" class="form-check-input" type="checkbox" value="true" checked>
+                      <% } else { %>
+                        <input name="title" class="form-check-input" type="checkbox" value="true">
+                      <% } %>
+                      Title
+                    </label>
+                    <label class="form-check-label">
+                      <% if (query.details === 'true') { %>
+                        <input name="details" class="form-check-input" type="checkbox" value="true" checked>
+                      <% } else { %>
+                        <input name="details" class="form-check-input" type="checkbox" value="true">
+                      <% } %>
+                      Details
+                    </label>
+                    <label class="form-check-label">
+                      <% if (query.location === 'true') { %>
+                        <input name="location" class="form-check-input" type="checkbox" value="true" checked>
+                      <% } else { %>
+                        <input name="location" class="form-check-input" type="checkbox" value="true">
+                      <% } %>
+                      Location
+                    </label>
+                    <label class="form-check-label">
+                      <% if (query.make === 'true') { %>
+                        <input name="make" class="form-check-input" type="checkbox" value="true" checked>
+                      <% } else { %>
+                        <input name="make" class="form-check-input" type="checkbox" value="true">
+                      <% } %>
+                      Make
+                    </label>
+                    <label class="form-check-label">
+                      <% if (query.model === 'true') { %>
+                        <input name="model" class="form-check-input" type="checkbox" value="true" checked>
+                      <% } else { %>
+                        <input name="model" class="form-check-input" type="checkbox" value="true">
+                      <% } %>
+                      Model
+                    </label>
+                    <label class="form-check-label">
+                      <% if (query.ownerID === 'true') { %>
+                        <input name="ownerID" class="form-check-input" type="checkbox" value="true" checked>
+                      <% } else { %>
+                        <input name="ownerID" class="form-check-input" type="checkbox" value="true">
+                      <% } %>
+                      Owner ID
+                    </label>
+
+                <% } %>
+
                 </div>
               </div>
             </form>
@@ -104,10 +144,13 @@
           </div>
         </div>
 
-        <hr />
+
 
         <% var showOptions; %>
-        <% if (showOptions === true) { %>
+        <% if (showOptions === false) { %>
+
+        <% } else { %>
+
           <div class="row">
             <div class="col-sm-12">
               <a href="#" class="btn btn-default btn-sm toggle-title">
@@ -127,9 +170,9 @@
               </a>
             </div>
           </div>
-          <hr />
+
         <% } %>
-        
+
       </div>
 
       <div class="bottom-layout">
